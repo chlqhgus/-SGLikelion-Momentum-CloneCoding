@@ -52,3 +52,12 @@ const quotes = [
       author: "Sam Levenson",
     },
   ];
+
+  const quote = document.querySelector("#quote span:first-child");
+  const author = document.querySelector("#quote span:last-child");
+
+  const quoteIndex = Math.floor(Math.random()*quotes.length);
+  const todaysQuote = quotes[quoteIndex];
+
+  quote.innerText = `${todaysQuote.quote} \n`;
+  author.innerText = `- ${todaysQuote.author} -`;
