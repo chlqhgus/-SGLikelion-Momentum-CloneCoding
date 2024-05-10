@@ -19,10 +19,14 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 loginForm.addEventListener("submit",onLoginSummit);
 
-// if (savedUsername == null){ 
-//     loginForm.classList.remove(HIDDEN_CLASSNAME);
-//     loginForm.addEventListener("submit",onLoginSummit);
-// } else {
+if (savedUsername === null){ 
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit",onLoginSummit);
+} else {
+   paintGreetings(); 
+}
 
-
-// }
+function paintGreetings(username) {
+    greeting.innerText = greeting.innerText = `Hi, ${userName}! I wish you have a nice day :)`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
